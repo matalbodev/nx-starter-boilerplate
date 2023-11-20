@@ -5,7 +5,7 @@ Here is a boilerplate used as starter to build a project.
 ### Frontend
 - [x] NextJS
 - [x] React
-- [] React native
+- [ ] React native
 
 ### Backend
 - [x] NestJS
