@@ -1,0 +1,15 @@
+@use 'sass:color' as color;
+@use 'sass:list';
+@use 'sass:map';
+
+$font-family-sans-serif: var(--font-work-sans), sans-serif;
+$font-title: var(--font-noto-sans), sans-serif;
+$html-font-size: 1.6rem;
+
+$colors: (
+  'black': #1a1a1a,
+  'white': #fff,
+  'danger': #f34351,
+  'primary': #424242,
+  'secondary': #000
+);

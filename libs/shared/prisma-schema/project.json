@@ -1,0 +1,77 @@
+{
+  "name": "shared-schema",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/prisma-schema/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/prisma-schema/**/*.ts"
+        ]
+      }
+    },
+    "prisma": {
+      "command": "prisma",
+      "options": {
+        "cwd": "libs/shared/prisma-schema"
+      }
+    },
+    "studio": {
+      "command": "prisma studio",
+      "options": {
+        "cwd": "libs/shared/prisma-schema"
+      }
+    },
+    "migrate": {
+      "executor": "nx:run-script",
+      "options": {
+        "cwd": "libs/shared/prisma-schema",
+        "script": "prisma:migrate"
+      }
+    },
+    "migrate:diff": {
+      "command": "prisma migrate diff",
+      "options": {
+        "cwd": "libs/shared/prisma-schema"
+      }
+    },
+    "migrate:reset": {
+      "executor": "nx:run-script",
+      "options": {
+        "cwd": "libs/shared/prisma-schema",
+        "script": "prisma:reset"
+      }
+    },
+    "generate-types": {
+      "command": "prisma generate",
+      "options": {
+        "cwd": "libs/shared/prisma-schema"
+      }
+    },
+    "seed": {
+      "command": "ts-node prisma/seed.ts",
+      "options": {
+        "cwd": "libs/shared/prisma-schema"
+      }
+    },
+    "seed-file": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "ts-node prisma/seed/seed-{args.file}.ts",
+        "cwd": "libs/shared/prisma-schema"
+      }
+    },
+    "seed-date": {
+      "command": "ts-node prisma/seed-date.ts",
+      "options": {
+        "cwd": "libs/shared/prisma-schema"
+      }
+    }
+  },
+  "tags": []
+}

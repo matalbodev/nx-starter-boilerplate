@@ -1,0 +1,26 @@
+@use 'sass:list';
+@use 'sass:map';
+
+@use './variables.scss' as *;
+@use 'scss-reset/reset';
+
+/**
+Import global styles for components
+**/
+html {
+  font-size: 10px;
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+  color: var(--black);
+}
+
+body {
+  font-size:  $html-font-size;
+}
+
+:root {
+  @each $name, $color in $colors {
+    @debug $color;
+    --color-#{$name}: #{$color};
+  }
+}

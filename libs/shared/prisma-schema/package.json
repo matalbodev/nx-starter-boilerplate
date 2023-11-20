@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:reset": "prisma migrate reset"
+  }
+}

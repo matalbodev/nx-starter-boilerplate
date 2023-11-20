@@ -1,0 +1,33 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@nx-starter/shared/assets/*": ["libs/shared/assets/*"],
+      "@nx-starter/shared/hooks": ["libs/shared/hooks/src/index.ts"],
+      "@nx-starter/shared/prisma-client": [ "libs/shared/prisma-client/src/index.ts" ],
+      "@nx-starter/shared/styles/*": ["libs/shared/styles/*"],
+      "@nx-starter/shared/ui": ["libs/shared/ui/src/index.ts"],
+      "@nx-starter/users/data-access": ["libs/users/data-access/src/index.ts"],
+      "@nx-starter/users/hooks": ["libs/users/hooks/src/index.ts"],
+      "@nx-starter/users/prisma-client": [ "libs/users/prisma-client/src/index.ts" ],
+      "@nx-starter/users/ui": ["libs/users/ui/src/index.ts"],
+      "@nx-starter/users/ui/server": ["libs/users/ui/src/server.ts"],
+      "@nx-starter/example/data-access": ["libs/example/data-access/src/index.ts"],
+      "@nx-starter/utils": ["libs/shared/utils/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

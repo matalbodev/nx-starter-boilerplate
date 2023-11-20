@@ -1,0 +1,35 @@
+{
+  "name": "meals-utils",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/meals/utils/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/libs/meals/utils",
+        "main": "libs/meals/utils/src/index.ts",
+        "tsConfig": "libs/meals/utils/tsconfig.lib.json",
+        "assets": [
+          "libs/meals/utils/*.md"
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/meals/utils/**/*.ts",
+          "libs/meals/utils/package.json"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
