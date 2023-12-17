@@ -1,8 +1,9 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
 import { UserService } from '../users/users.service';
 import { User } from '@nx-starter/shared/prisma-client';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
+import * as bcrypt from 'bcrypt';
 
 export type UserWithoutPassword<T> = Omit<T, 'password'>;
 
@@ -17,8 +18,8 @@ export class AuthService {
   ) {}
 
   async signIn(
-    username: string,
-    pass: string
+    email: string,
+    password: string
   ): Promise<
     UserWithoutPassword<
       User & {
@@ -29,10 +30,14 @@ export class AuthService {
     >
   > {
     const user = await this.usersService.user({
-      username,
+      email,
     });
-    if (user?.password !== pass) {
-      throw new UnauthorizedException();
+    if (!user) {
+      throw new NotFoundException(`No user found for email: ${email}`);
+    }
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
+      throw new UnauthorizedException('Invalid password');
     }
     const payload = { sub: user.id, username: user.username };
     return {

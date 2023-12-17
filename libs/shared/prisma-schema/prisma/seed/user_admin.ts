@@ -1,6 +1,8 @@
 import { PrismaClient, Role } from '@prisma/client/shared';
 const prisma = new PrismaClient();
-const { ADMIN_EMAIL, ADMIN_USERNAME, ADMIN_PASSWORD } = process.env
+const { ADMIN_EMAIL, ADMIN_USERNAME, ADMIN_PASSWORD } = process.env;
+import * as bcrypt from 'bcrypt';
+export const roundsOfHashing = 10;
 
 async function main() {
   // creating admin user
@@ -9,11 +11,14 @@ async function main() {
     username: ADMIN_USERNAME || '',
     password: ADMIN_PASSWORD || '',
     role: Role.ADMIN,
-  }
+  };
+
+  const hashedPassword = await bcrypt.hash(user.password, roundsOfHashing)
+  user.password = hashedPassword
 
   await prisma.user.create({
-    data: user
-  })
+    data: user,
+  });
 }
 
 main()

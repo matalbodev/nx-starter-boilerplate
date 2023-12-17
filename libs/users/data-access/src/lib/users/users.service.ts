@@ -1,11 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService, Prisma, User } from '@nx-starter/shared/prisma-client';
+import { CreateUserDTO } from './dto/create-user.dto';
+import * as bcrypt from 'bcrypt';
+import { UpdateUserDTO } from './dto/update-user.dto';
+export const roundsOfHashing = 10;
 
 type UserWithoutPassword = Omit<User, 'password'>;
 
 @Injectable()
 export class UserService {
-  constructor(private prisma: PrismaService) { }
+  constructor(private prisma: PrismaService) {}
 
   async userWithoutPassword(
     userWhereUniqueInput: Prisma.UserWhereUniqueInput
@@ -64,10 +68,15 @@ export class UserService {
     });
   }
 
-  async createUser(data: Prisma.UserCreateInput) {
+  async createUser(createUserDTO: CreateUserDTO) {
+    const hashedPassword = await bcrypt.hash(
+      createUserDTO.password,
+      roundsOfHashing
+    );
+    createUserDTO.password = hashedPassword;
     try {
       const response = await this.prisma.user.create({
-        data,
+        data: createUserDTO,
       });
       return response;
     } catch (e) {
@@ -83,11 +92,17 @@ export class UserService {
 
   async updateUser(options: {
     where: Prisma.UserWhereUniqueInput;
-    data: Prisma.UserUpdateInput;
+    updateUserDTO: UpdateUserDTO;
   }) {
-    const { where, data } = options;
+    const { where, updateUserDTO } = options;
+    if (updateUserDTO.password) {
+      updateUserDTO.password = await bcrypt.hash(
+        updateUserDTO.password,
+        roundsOfHashing
+      );
+    }
     return this.prisma.user.update({
-      data,
+      data: updateUserDTO,
       where,
     });
   }
