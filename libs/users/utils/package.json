@@ -1,5 +1,5 @@
 {
-  "name": "@nx-starter/shared/utils",
+  "name": "@nx-starter/users/utils",
   "version": "0.0.1",
   "type": "commonjs"
 }

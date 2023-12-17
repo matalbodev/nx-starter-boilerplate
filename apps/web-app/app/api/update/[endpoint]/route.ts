@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { authentificatedRoute } from '../../../../lib/authentificatedRoute';
 
-const updateMeal = async (
+const update = async (
   req: NextRequest,
   access_token: string,
   params: {
@@ -42,6 +42,6 @@ const handler = async (
   }
 ) =>
   authentificatedRoute<NextResponse>(req, async (access_token: string) =>
-    updateMeal(req, access_token, context.params)
+    update(req, access_token, context.params)
   );
 export { handler as PATCH };

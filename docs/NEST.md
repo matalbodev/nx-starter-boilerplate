@@ -1,4 +1,4 @@
-# Basic commands fort nest
+# Basic commands for nest
 
 ## Generate a resource
 ```bash
