@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { Role } from '@prisma/client/shared';
 import { IsNotEmpty, IsEmail } from 'class-validator'
 export class CreateUserDTO {
   @ApiProperty()
@@ -9,4 +10,6 @@ export class CreateUserDTO {
   @IsEmail()
   @IsNotEmpty()
   email: string;
+  @ApiProperty()
+  role: Role;
 }

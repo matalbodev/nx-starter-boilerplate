@@ -68,11 +68,12 @@ export class UsersController {
   async createUser(
     @Body() userData: CreateUserDTO
   ): Promise<UserEntity | null> {
-    const { username, email, password } = userData;
+    const { username, email, password, role } = userData;
     return this.userService.createUser({
       username,
       email,
       password,
+      role,
     });
   }
 }
