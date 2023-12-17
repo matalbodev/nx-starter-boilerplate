@@ -65,12 +65,6 @@
         "command": "ts-node prisma/seed/seed-{args.file}.ts",
         "cwd": "libs/shared/prisma-schema"
       }
-    },
-    "seed-date": {
-      "command": "ts-node prisma/seed-date.ts",
-      "options": {
-        "cwd": "libs/shared/prisma-schema"
-      }
     }
   },
   "tags": []
