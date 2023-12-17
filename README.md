@@ -17,6 +17,11 @@ Here is a boilerplate used as starter to build a project.
 
 ## First run
 
+Install dependencies
+```bash
+pnpm i
+```
+
 Generate types for prisma
 ```bash
 nx run shared-schema:generate-types
