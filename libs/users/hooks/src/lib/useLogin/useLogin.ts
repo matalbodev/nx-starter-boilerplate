@@ -21,19 +21,19 @@ export function useLogin(): UseLogin {
   const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
     const target = e.target as typeof e.target & {
-      username: { value: string };
+      email: { value: string };
       password: { value: string };
     };
 
     const {
-      username: { value: username },
+      email: { value: email },
       password: { value: password },
     } = target;
 
     await signIn('credentials', {
       callbackUrl: searchParams.get('callbackUrl') || '/dashboard',
       redirect: true,
-      username,
+      email,
       password,
     });
   };

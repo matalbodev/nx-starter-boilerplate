@@ -23,7 +23,7 @@ export class AuthController {
   @Post('login')
   async signIn(@Body() signInDto: SignInDTO) {
     return await this.authService.signIn(
-      signInDto.username,
+      signInDto.email,
       signInDto.password
     );
   }

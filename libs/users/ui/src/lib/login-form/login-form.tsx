@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import styles from './login-form.module.scss';
-import { Button, Input, Title } from '@nx-starter/shared/ui';
+import { Button, Input } from '@nx-starter/shared/ui';
 import { useLogin } from '@nx-starter/users/hooks';
 import { useSearchParams } from 'next/navigation';
 /* eslint-disable-next-line */
@@ -13,13 +13,12 @@ export function LoginForm(props: LoginFormProps) {
   const searchParams = useSearchParams();
   return (
     <form className={styles[mainClass]} onSubmit={handleSubmit}>
-      <Title size={"md"}>Sign in</Title>
       <div className={styles[`${mainClass}__container`]}>
         <Input
-          placeholder="username"
-          type="text"
-          name="username"
-          autoComplete="username"
+          placeholder="email"
+          type="email"
+          name="email"
+          autoComplete="email"
           isFull
           isWrapped
         />
@@ -33,7 +32,9 @@ export function LoginForm(props: LoginFormProps) {
         />
         <div>
           {searchParams?.get('error') !== null && (
-            <p className={styles.error}>{errors[searchParams.get('error') as string]}</p>
+            <p className={styles.error}>
+              {errors[searchParams.get('error') as string]}
+            </p>
           )}
         </div>
         <div className={styles[`${mainClass}__submit`]}>

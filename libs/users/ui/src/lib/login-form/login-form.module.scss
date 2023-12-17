@@ -1,4 +1,5 @@
 @use '@nx-starter/shared/styles/variables.scss' as *;
+@use 'sass:map';
 .login-form {
   text-align: center;
   display: flex;
@@ -26,7 +27,7 @@
   margin-right: 2rem;
   display: block;
   font-size: 1.4rem;
-  color: $color-secondary;
+  color: map.get($colors, 'secondary');
   text-decoration: none;
   font-weight: 600;
 }
