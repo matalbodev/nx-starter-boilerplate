@@ -9,12 +9,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Role {
+  USER
+  ADMIN
+}
+
 model User {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   email     String   @unique
   username  String   @unique
   password  String
+  role      Role     @default(USER)
   profile   Profile?
 }
 
