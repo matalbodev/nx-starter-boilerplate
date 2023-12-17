@@ -1,5 +1,5 @@
 import { getServerSession } from 'next-auth';
-import { authOptions } from '@nx-starter/utils';
+import { authOptions } from '@nx-starter/shared/utils';
 
 interface GetSSRData {
   endpoint: string;
