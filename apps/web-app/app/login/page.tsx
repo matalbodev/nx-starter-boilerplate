@@ -1,6 +1,6 @@
 import { LoginForm } from '@nx-starter/users/ui';
 
-export default async function Index() {
+export default async function Login() {
   return (
     <div>
       <h1>Backoffice</h1>

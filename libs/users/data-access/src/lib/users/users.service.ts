@@ -39,15 +39,20 @@ export class UserService {
     cursor?: Prisma.UserWhereUniqueInput;
     where?: Prisma.UserWhereInput;
     orderBy?: Prisma.UserOrderByWithAggregationInput;
-  }): Promise<UserWithoutPassword[] | null> {
+  }): Promise<{
+    data: UserWithoutPassword[] | null;
+    total: number
+  }> {
     const users = await this.prisma.user.findMany(options);
-    if (!users?.length) return null;
     const usersWithoutPassword = users.map((user) =>
       Object.fromEntries(
         Object.entries(user).filter(([key]) => !key.includes('password'))
       )
     ) as UserWithoutPassword[];
-    return usersWithoutPassword;
+    return {
+      data: usersWithoutPassword,
+      total: await this.prisma.user.count(),
+    };
   }
 
   async users(options: {
