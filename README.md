@@ -20,10 +20,16 @@ Init env var
 ```bash
 cp .env.example .env
 ```
+Check .env file to edit it with your values.
 
 Install dependencies
 ```bash
 pnpm i
+```
+
+Launch postgresSQL to docker
+```bash
+docker-compose up -d
 ```
 
 Generate types for prisma
