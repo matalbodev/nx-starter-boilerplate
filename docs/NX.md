@@ -5,10 +5,10 @@
 Create a component
 
 ```bash
-nx g @nx/react:component libs/shared/ui/src/lib/Component/Component --export=true
+nx g @nx/next:component libs/shared/ui/src/lib/Component/Component --export=false --nameAndDirectoryFormat=as-provided --style=scss
 ```
 
-*Note: Don't forget to add 'use client' on top of client side component for NextJS
+*Note : to be compatible with NextJS you can export client/server component from client.ts/server.ts have a look in libs/shared/ui
 
 Generate a story
 

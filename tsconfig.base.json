@@ -24,7 +24,8 @@
         "libs/shared/prisma-client/src/index.ts"
       ],
       "@nx-starter/shared/styles/*": ["libs/shared/styles/*"],
-      "@nx-starter/shared/ui": ["libs/shared/ui/src/index.ts"],
+      "@nx-starter/shared/ui/client": ["libs/shared/ui/src/client.ts"],
+      "@nx-starter/shared/ui/server": ["libs/shared/ui/src/server.ts"],
       "@nx-starter/shared/utils": ["libs/shared/utils/src/index.ts"],
       "@nx-starter/users-hooks": ["libs/users/hooks/src/index.ts"],
       "@nx-starter/users/data-access": ["libs/users/data-access/src/index.ts"],
