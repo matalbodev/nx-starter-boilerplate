@@ -1,10 +1,17 @@
 # Nx workspace commands
 
-### React
+## React
 
 Create a component
+
 ```bash
-nx g @nx/react:component PATH_TO_COMPONENT
+nx g @nx/react:component libs/shared/ui/src/lib/Component/Component --export=true
 ```
 
-eg. PATH_TO_COMPONENT can be 'libs/shared/ui/src/lib/Component/Component.tsx'
+*Note: Don't forget to add 'use client' on top of client side component for NextJS
+
+Generate a story
+
+```bash
+nx g @nx/react:component-story --componentPath=lib/Component/Component.tsx --project=shared-ui
+```

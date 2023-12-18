@@ -1,3 +1,4 @@
+'use client';
 import { signOut } from 'next-auth/react';
 
 /* eslint-disable-next-line */
@@ -7,7 +8,7 @@ export interface LogoutProps {
 
 export function Logout(props: LogoutProps) {
   const { label } = props;
-  return <button onClick={() => signOut()}>{label}</button>
+  return <button type="button" onClick={() => signOut()}>{label}</button>;
 }
 
 export default Logout;

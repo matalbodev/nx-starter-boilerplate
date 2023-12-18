@@ -1,3 +1,4 @@
+'use client';
 import styles from './UsersList.module.scss';
 import type { User, Users } from '../../index';
 

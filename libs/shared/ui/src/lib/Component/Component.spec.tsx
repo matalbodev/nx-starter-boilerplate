@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import Button from './Button';
+import Component from './Component';
 
-describe('Button', () => {
+describe('Component', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Button markup='a'>Button</Button>);
+    const { baseElement } = render(<Component />);
     expect(baseElement).toBeTruthy();
   });
 });

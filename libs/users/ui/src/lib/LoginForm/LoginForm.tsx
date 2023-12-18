@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
 import styles from './LoginForm.module.scss';
-import { Button, Input } from '@nx-starter/shared/ui';
 import { useLogin } from '@nx-starter/users/hooks';
 import { useSearchParams } from 'next/navigation';
 /* eslint-disable-next-line */
@@ -14,21 +13,17 @@ export function LoginForm(props: LoginFormProps) {
   return (
     <form className={styles[mainClass]} onSubmit={handleSubmit}>
       <div className={styles[`${mainClass}__container`]}>
-        <Input
+        <input
           placeholder="email"
           type="email"
           name="email"
           autoComplete="email"
-          isFull
-          isWrapped
         />
-        <Input
+        <input
           placeholder="password"
           name="password"
           type="password"
           autoComplete="current-password"
-          isFull
-          isWrapped
         />
         <div>
           {searchParams?.get('error') !== null && (
@@ -41,9 +36,9 @@ export function LoginForm(props: LoginFormProps) {
           <Link className={styles['forgot-password']} href="/forgot-password">
             Forgot your password ?
           </Link>
-          <Button markup="button" type="submit" color="primary">
+          <button type="submit">
             Log in
-          </Button>
+          </button>
         </div>
       </div>
     </form>

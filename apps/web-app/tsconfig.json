@@ -28,7 +28,8 @@
     "**/*.jsx",
     "../../types/*.d.ts",
     "../../dist/apps/web-app/.next/types/**/*.ts",
-    "../../apps/web-app/.next/types/**/*.ts"
+    "../../apps/web-app/.next/types/**/*.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
