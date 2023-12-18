@@ -1,6 +1,8 @@
 # NX starter boilerplate
 
-Here is a boilerplate used as starter to build a project.
+Why use this boilerplate ?
+
+This repo bundle hours of code for you with a fully set up API and a frontend.
 
 ### Frontend
 - [x] NextJS
@@ -9,10 +11,10 @@ Here is a boilerplate used as starter to build a project.
 ### Backend
 - [x] NestJS
 - [x] Prisma
+- [x] Api with swagger
 
 ### Auth
 - [x] Auth.js
-- [x] Api with swagger
 
 ## First run
 
