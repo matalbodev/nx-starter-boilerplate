@@ -1,4 +1,3 @@
-'use client';
 import Link from 'next/link';
 import styles from './LoginForm.module.scss';
 import { useLogin } from '@nx-starter/users/hooks';

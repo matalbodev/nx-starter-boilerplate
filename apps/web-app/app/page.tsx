@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styles from './page.module.scss';
 
-export default async function Index() {
+export default function Index() {
   return (
     <div className={styles.container}>
       <h1>Welcome to your NX boilerplate starter</h1>
