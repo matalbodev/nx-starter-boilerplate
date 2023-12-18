@@ -14,9 +14,7 @@ export function Column(props: ColumnProps) {
   return (
     <ClassProvider className={className}>
       <div
-        style={{
-          '--size': `${(100 / 12) * size}%`,
-        }}
+        style={{['--length' as string]: `${(100 / 12) * size}%`}}
         className={styles['col']}
       >
         {children}

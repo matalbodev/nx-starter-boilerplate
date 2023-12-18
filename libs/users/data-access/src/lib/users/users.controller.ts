@@ -26,15 +26,20 @@ export class UsersController {
     required: false,
   })
   async getUsers(
+    @Response() res: Res,
     @Query('take') take?: number,
     @Query('skip') skip?: number
-  ): Promise<UserWithoutPassword[] | null> {
+  ): Promise<Res<UserWithoutPassword[] | null>> {
 
     const users =  await this.userService.findAllUsers({
       take,
       skip
     })
-    return users;
+    return users?.data?.length
+      ? res.set({
+        'x-total': users.total,
+      }).status(200).json(users.data)
+      : res.status(404).json({ error: 'There are nos users'});
   }
 
   @Get(':id')
@@ -54,7 +59,7 @@ export class UsersController {
     const user = await this.userService.userWithoutPassword({
       id: Number(id)
     })
-    console.log(user)
+
     user
       ? res.status(200).json(user)
       : res.status(404).json({ error: `No user find for this id : ${id}` })
@@ -68,11 +73,12 @@ export class UsersController {
   async createUser(
     @Body() userData: CreateUserDTO
   ): Promise<UserEntity | null> {
-    const { username, email, password } = userData;
+    const { username, email, password, role } = userData;
     return this.userService.createUser({
       username,
       email,
       password,
+      role,
     });
   }
 }

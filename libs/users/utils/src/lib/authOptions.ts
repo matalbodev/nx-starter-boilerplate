@@ -37,7 +37,7 @@ export const authOptions: NextAuthOptions = {
     CredentialsProvider({
       name: 'Credentials',
       credentials: {
-        username: { label: 'Username', type: 'text', placeholder: 'jsmith' },
+        email: { label: 'Email', type: 'email', placeholder: 'email@test.com' },
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials, req) {
@@ -47,7 +47,7 @@ export const authOptions: NextAuthOptions = {
           headers: { 'Content-Type': 'application/json' },
         });
         const user = await res.json();
-
+        console.log(user)
         // If no error and we have user data, return it
         if (res?.ok && user) {
           return user;

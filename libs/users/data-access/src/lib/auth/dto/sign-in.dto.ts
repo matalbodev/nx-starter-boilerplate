@@ -3,10 +3,10 @@ import { IsNotEmpty } from 'class-validator';
 export class SignInDTO {
 
   @ApiProperty({
-    default: 'malbore'
+    default: 'mathieualbore@gmail.com'
   })
   @IsNotEmpty()
-  readonly username: string;
+  readonly email: string;
   @ApiProperty({
     default: 'test'
   })
