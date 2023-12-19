@@ -1,14 +1,20 @@
 # Nx workspace commands
 
-## React
+## Next/React
 
-Create a component
+Create a client component
 
 ```bash
-nx g @nx/next:component libs/shared/ui/src/lib/Component/Component --export=false --nameAndDirectoryFormat=as-provided --style=scss
+nx g @nx-starter/custom-react-next:component libs/shared/ui/src/lib/CSRComponent/CSRComponent
 ```
 
-*Note : to be compatible with NextJS you can export client/server component from client.ts/server.ts have a look in libs/shared/ui
+Create a server component
+
+```bash
+nx g @nx-starter/custom-react-next:component libs/shared/ui/src/lib/SSRComponent/SSRComponent --client=false
+```
+
+*Note: `libs/shared/ui/src/lib` is the path of your library
 
 Generate a story
 

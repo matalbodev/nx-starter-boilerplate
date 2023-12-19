@@ -1,0 +1,52 @@
+{
+  "name": "custom-react-next",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/generators/custom-react-next/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/generators/custom-react-next",
+        "main": "libs/generators/custom-react-next/src/index.ts",
+        "tsConfig": "libs/generators/custom-react-next/tsconfig.lib.json",
+        "assets": [
+          "libs/generators/custom-react-next/*.md",
+          {
+            "input": "./libs/generators/custom-react-next/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./libs/generators/custom-react-next/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./libs/generators/custom-react-next",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./libs/generators/custom-react-next",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/generators/custom-react-next/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

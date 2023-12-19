@@ -1,11 +1,11 @@
-import { Component } from "@nx-starter/shared/ui/client";
-import { SSRComponent } from '@nx-starter/shared/ui/server';
+import { CSRComponent } from "@nx-starter/shared/ui";
+import { SSRComponent } from '@nx-starter/shared/ui';
 
 export default async function Demo() {
   return (
     <>
       <SSRComponent />
-      <Component />
+      <CSRComponent />
     </>
   );
 }
