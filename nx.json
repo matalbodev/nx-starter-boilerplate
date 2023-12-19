@@ -102,6 +102,12 @@
         "style": "scss",
         "linter": "eslint"
       }
+    },
+    "@nx-starter/custom-react-next:component": {
+      "client": true,
+      "export": true,
+      "nameAndDirectoryFormat": "as-provided",
+      "style": "scss"
     }
   }
 }
