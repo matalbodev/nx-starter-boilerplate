@@ -1,5 +1,6 @@
 @use 'sass:list';
 @use 'sass:map';
+@use 'sass:color';
 
 @use './variables.scss' as *;
 @use 'scss-reset/reset';
@@ -15,12 +16,19 @@ html {
 }
 
 body {
-  font-size:  $html-font-size;
+  font-size: $html-font-size;
 }
 
 :root {
   @each $name, $color in $colors {
-    @debug $color;
     --color-#{$name}: #{$color};
+
+    @if color.whiteness($color)>50% {
+      --color-#{$name}--reverse: black;
+    }
+
+    @else {
+      --color-#{$name}--reverse: white;
+    }
   }
 }

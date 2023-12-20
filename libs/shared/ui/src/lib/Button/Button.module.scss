@@ -1,7 +1,24 @@
-/*
- * Replace this with your own classes
- *
- * e.g.
- * .container {
- * }
-*/
+.button {
+  // default button
+  padding: 1rem 2rem;
+
+  // modifiers
+  &--primary {
+    background-color: var(--color-primary);
+    color: var(--color-primary--reverse);
+  }
+
+  &--secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-secondary--reverse);
+  }
+
+  &--tertiary {
+    background-color: var(--color-tertiary);
+    color: var(--color-tertiary--reverse);
+  }
+
+  &--lg {
+    padding: 2rem 3rem;
+  }
+}

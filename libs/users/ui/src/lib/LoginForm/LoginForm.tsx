@@ -1,7 +1,9 @@
+'use client';
 import Link from 'next/link';
 import styles from './LoginForm.module.scss';
 import { useLogin } from '@nx-starter/users/hooks';
 import { useSearchParams } from 'next/navigation';
+import { Button } from '@nx-starter/shared/ui';
 /* eslint-disable-next-line */
 export interface LoginFormProps {}
 
@@ -35,9 +37,9 @@ export function LoginForm(props: LoginFormProps) {
           <Link className={styles['forgot-password']} href="/forgot-password">
             Forgot your password ?
           </Link>
-          <button type="submit">
+          <Button skin="primary" type="submit">
             Log in
-          </button>
+          </Button>
         </div>
       </div>
     </form>

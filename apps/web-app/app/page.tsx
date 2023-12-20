@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './page.module.scss';
+import { Button } from '@nx-starter/shared/ui';
 
 export default function Index() {
   return (
@@ -28,7 +29,7 @@ export default function Index() {
       </ul>
       <h2>What&apos;s next ?</h2>
       <Link href="/backoffice">
-        Go to backoffice
+        <Button skin="primary">Go to backoffice</Button>
       </Link>
     </div>
   );
