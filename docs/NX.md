@@ -14,7 +14,9 @@ Create a server component
 nx g @nx-starter/custom-react-next:component libs/shared/ui/src/lib/SSRComponent/SSRComponent --client=false
 ```
 
-*Note: `libs/shared/ui/src/lib` is the path of your library
+*Note:
+`libs/shared/ui/src/lib` is the path of your library
+`SSRComponent/SSRComponent` is the folder/name of your component
 
 Generate a story
 
