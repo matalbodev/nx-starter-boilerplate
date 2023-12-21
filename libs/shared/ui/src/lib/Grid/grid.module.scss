@@ -1,0 +1,22 @@
+@use '../../../../styles/variables.scss' as *;
+.grid {
+  display: flex;
+  margin-left: 0 - var(--gutter);
+  margin-right: 0 - var(--gutter);
+  flex-wrap: wrap;
+  &--items-center {
+    align-items: center;
+  }
+
+  &--justify-center {
+    justify-content: center;
+  }
+
+  &--flex-end {
+    justify-content: flex-end;
+  }
+
+  > div {
+    padding: 0 var(--gutter) var(--gutter) var(--gutter);
+  }
+}

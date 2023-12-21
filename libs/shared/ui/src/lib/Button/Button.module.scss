@@ -1,24 +1,36 @@
-.button {
-  // default button
-  padding: 1rem 2rem;
+@use 'sass:map';
+@use '../../../../styles/variables.scss' as *;
 
-  // modifiers
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.25rem;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  font-size: 1.6rem;
+  line-height: normal;
+  transition: background-color 500ms ease;
+  color: white;
+
   &--primary {
     background-color: var(--color-primary);
-    color: var(--color-primary--reverse);
   }
-
   &--secondary {
     background-color: var(--color-secondary);
-    color: var(--color-secondary--reverse);
   }
 
-  &--tertiary {
-    background-color: var(--color-tertiary);
-    color: var(--color-tertiary--reverse);
+  &--sm {
+    font-size: 1.4rem;
   }
 
-  &--lg {
-    padding: 2rem 3rem;
+  &--full {
+    width: 100%;
+  }
+
+  &--center {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

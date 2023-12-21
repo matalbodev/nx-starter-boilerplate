@@ -15,12 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-starter/custom-react-next": [
-        "libs/generators/custom-react-next/src/index.ts"
-      ],
       "@nx-starter/example/data-access": [
         "libs/example/data-access/src/index.ts"
       ],
+      "@nx-starter/shared/assets/*": ["libs/shared/assets/*"],
       "@nx-starter/shared/hooks": ["libs/shared/hooks/src/index.ts"],
       "@nx-starter/shared/prisma-client": [
         "libs/shared/prisma-client/src/index.ts"

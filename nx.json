@@ -17,26 +17,14 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     },
     "test": {
-      "inputs": [
-        "default",
-        "^production",
-        "{workspaceRoot}/jest.preset.js"
-      ]
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     },
     "e2e": {
-      "inputs": [
-        "default",
-        "^production"
-      ]
+      "inputs": ["default", "^production"]
     },
     "lint": {
       "inputs": [
@@ -55,17 +43,11 @@
     },
     "@nx/vite:test": {
       "cache": true,
-      "inputs": [
-        "default",
-        "^production"
-      ]
+      "inputs": ["default", "^production"]
     }
   },
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
@@ -90,11 +72,6 @@
       },
       "library": {
         "unitTestRunner": "jest"
-      },
-      "component": {
-        "export": true,
-        "nameAndDirectoryFormat": "as-provided",
-        "style": "scss"
       }
     },
     "@nx/next": {
@@ -102,12 +79,6 @@
         "style": "scss",
         "linter": "eslint"
       }
-    },
-    "@nx-starter/custom-react-next:component": {
-      "client": true,
-      "export": true,
-      "nameAndDirectoryFormat": "as-provided",
-      "style": "scss"
     }
   }
 }

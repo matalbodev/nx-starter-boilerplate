@@ -1,8 +1,6 @@
 # NX starter boilerplate
 
-Why use this boilerplate ?
-
-This repo bundle hours of code for you with a fully set up API and a frontend.
+Here is a boilerplate used as starter to build a project.
 
 ### Frontend
 - [x] NextJS
@@ -11,10 +9,10 @@ This repo bundle hours of code for you with a fully set up API and a frontend.
 ### Backend
 - [x] NestJS
 - [x] Prisma
-- [x] Api with swagger
 
 ### Auth
 - [x] Auth.js
+- [x] Api with swagger
 
 ## First run
 
@@ -22,16 +20,10 @@ Init env var
 ```bash
 cp .env.example .env
 ```
-Check .env file to edit it with your values.
 
 Install dependencies
 ```bash
 pnpm i
-```
-
-Launch postgresSQL to docker
-```bash
-docker-compose up -d
 ```
 
 Generate types for prisma

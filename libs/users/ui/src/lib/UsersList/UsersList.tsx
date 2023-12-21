@@ -1,4 +1,3 @@
-'use client';
 import styles from './UsersList.module.scss';
 import type { User, Users } from '../../index';
 
@@ -12,7 +11,7 @@ export function UsersList(props: UsersListProps) {
   return (
     <div className={styles.container}>
       {users.map((user: User) => (
-        <div key={user.id} className={styles.user}>
+        <div className={styles.user}>
           <span>{user.username}</span>
           <span>{user.email}</span>
           <span>{user.createdAt}</span>

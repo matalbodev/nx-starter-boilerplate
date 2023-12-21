@@ -1,0 +1,5 @@
+@use '../../../../styles/variables.scss' as *;
+
+.col {
+  flex: 0 0 var(--size);
+}
